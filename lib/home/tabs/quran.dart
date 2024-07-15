@@ -21,18 +21,17 @@ class QuranTabs extends StatelessWidget {
           color: Color(0xFFB7935F),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
               "Ayat Number",
-              style:
-              GoogleFonts.elMessiri(fontWeight: FontWeight.w600, fontSize: 25),
+              style: GoogleFonts.elMessiri(
+                  fontWeight: FontWeight.w600, fontSize: 25),
             ),
-            VerticalDivider(color: Colors.red,width: 50,),
             Text(
               "Sura Name",
-              style:
-              GoogleFonts.elMessiri(fontWeight: FontWeight.w600, fontSize: 25),
+              style: GoogleFonts.elMessiri(
+                  fontWeight: FontWeight.w600, fontSize: 25),
             ),
           ],
         ),
@@ -63,10 +62,12 @@ class QuranTabs extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(height: 45,),
+                        SizedBox(
+                          height: 45,
+                        ),
                         Expanded(
                           child: Column(
-                             children: [
+                            children: [
                               Text(
                                 "${suraNames[index]}",
                                 textAlign: TextAlign.center,

@@ -44,7 +44,7 @@ class _SuraDetalisScreenState extends State<SuraDetalisScreen> {
           child: Card(
             margin: EdgeInsets.all(10),
             color:Color.fromRGBO(248 , 248 , 248, 30),
-            elevation: 4,
+            elevation:30,
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
                 borderSide: BorderSide(color: Colors.transparent)),

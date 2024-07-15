@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/sebha_light.png")),
-                label: "",
+                label: "Sebha",
                 backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
-                label: "",
+                label: "Setting",
                 backgroundColor: Color(0xffB7935F),
               ),
             ]),
