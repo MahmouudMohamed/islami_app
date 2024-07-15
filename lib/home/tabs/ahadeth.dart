@@ -34,7 +34,7 @@ class _AhadethTabState extends State<AhadethTab> {
           "Ahadeth",
           textAlign: TextAlign.center,
           style:
-              GoogleFonts.elMessiri(fontWeight: FontWeight.w600, fontSize: 25),
+          GoogleFonts.elMessiri(fontWeight: FontWeight.w600, fontSize: 25),
         ),
         Divider(
           thickness: 3,
@@ -42,41 +42,41 @@ class _AhadethTabState extends State<AhadethTab> {
         ),
         Expanded(
             child: ListView.builder(
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, hadethDetalisScreen.routeName,
-                arguments: allAhageth[index]);
-              },
-              child: Column(
-                children: [
-                  Text(
-                    "الحديث رقم ${ index + 1}",
-                    // "${allAhageth[index].title}",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.inder(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w400,
-                    ),
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, hadethDetalisScreen.routeName,
+                        arguments: allAhageth[index]);
+                  },
+                  child: Column(
+                    children: [
+                      Text(
+                        "الحديث رقم ${ index + 1}",
+                        // "${allAhageth[index].title}",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.inder(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Divider(
+                        thickness: 3,
+                        color: Color(0xFFB7935F),
+                      ),
+                    ],
                   ),
-                  Divider(
-                    thickness: 3,
-                    color: Color(0xFFB7935F),
-                  ),
-                ],
-              ),
 
-            );
-          },
-          itemCount: allAhageth.length,
-        ))
+                );
+              },
+              itemCount: allAhageth.length,
+            ))
       ],
     );
   }
 
   loadHadethFiles() {
     rootBundle.loadString("assets/files/ahadeth.txt").then(
-      (value) {
+          (value) {
         List<String> ahadeth = value.split("#");
         for (int i = 0; i < ahadeth.length; i++) {
           String hadethOne = ahadeth[i];

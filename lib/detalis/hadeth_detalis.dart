@@ -15,7 +15,7 @@ class hadethDetalisScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           image:
-              DecorationImage(image: AssetImage("assets/image/main_bg.png"))),
+          DecorationImage(image: AssetImage("assets/image/main_bg.png"))),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
