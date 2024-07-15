@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/radio_light.png")),
-                label: "",
+                label: "Radio",
                 backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
