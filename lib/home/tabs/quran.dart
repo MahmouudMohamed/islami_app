@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/sura_model.dart';
+import 'package:islami_app/model/sura_model.dart';
 
-import '../../sura_detalis.dart';
+import '../../detalis/sura_detalis.dart';
 
 class QuranTabs extends StatelessWidget {
   QuranTabs({super.key});
@@ -48,37 +48,35 @@ class QuranTabs extends StatelessWidget {
                       Navigator.pushNamed(context, SuraDetalisScreen.routeName,
                           arguments: SuraModel(suraNames[index], index));
                     },
-                    child: Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              children: [
-                                Text(
-                                  "${ayaNumber[index].toString()}",
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.inder(
-                                      fontSize: 25, fontWeight: FontWeight.w400),
-                                ),
-                              ],
-                            ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Text(
+                                "${ayaNumber[index].toString()}",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.inder(
+                                    fontSize: 25, fontWeight: FontWeight.w400),
+                              ),
+                            ],
                           ),
-                          VerticalDivider(color: Colors.red,),
-                          Expanded(
-                            child: Column(
-                               children: [
-                                Text(
-                                  "${suraNames[index]}",
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.inder(
-                                      fontSize: 25, fontWeight: FontWeight.w400),
-                                ),
-                              ],
-                            ),
+                        ),
+                        SizedBox(height: 45,),
+                        Expanded(
+                          child: Column(
+                             children: [
+                              Text(
+                                "${suraNames[index]}",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.inder(
+                                    fontSize: 25, fontWeight: FontWeight.w400),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   );
                 },
