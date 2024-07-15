@@ -26,6 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
       Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          elevation: 0,
+          scrolledUnderElevation: 0,
           centerTitle: true,
           backgroundColor: Colors.transparent,
           title: Text(
@@ -43,17 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             selectedItemColor: Colors.black,
             unselectedItemColor: Colors.white,
-            showSelectedLabels: false,
             showUnselectedLabels: false,
+
             items: [
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/moshaf_light.png")),
-                label: "",
+                label: "Quran",
                 backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/ahadeth_light.png")),
-                label: "",
+                label: "Ahadeth",
                 backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(

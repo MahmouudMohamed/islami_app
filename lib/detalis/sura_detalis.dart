@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/sura_model.dart';
+import 'package:islami_app/model/sura_model.dart';
 
 class SuraDetalisScreen extends StatefulWidget {
   static const String routeName = "sura";
@@ -29,6 +29,8 @@ class _SuraDetalisScreenState extends State<SuraDetalisScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          elevation: 0,
+          scrolledUnderElevation: 0,
           centerTitle: true,
           backgroundColor: Colors.transparent,
           title: Text(
@@ -37,26 +39,29 @@ class _SuraDetalisScreenState extends State<SuraDetalisScreen> {
                 fontSize: 30, fontWeight: FontWeight.w700),
           ),
         ),
-        body: Card(
-          margin: EdgeInsets.all(12),
-          color: Color(0x80B7935F),
-          elevation: 4,
-          shape: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide(color: Colors.transparent)),
-          child: ListView.builder(
-            itemBuilder: (context, index) {
-              return Text(
-                "${showSura[index]}[${index+1}]",
-                textDirection: TextDirection.rtl,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.inder(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 40,
-                    color: Colors.white),
-              );
-            },
-            itemCount: showSura.length,
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Card(
+            margin: EdgeInsets.all(10),
+            color:Color.fromRGBO(248 , 248 , 248, 30),
+            elevation: 4,
+            shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: BorderSide(color: Colors.transparent)),
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return Text(
+                  "${showSura[index]}[${index+1}]",
+                  textDirection: TextDirection.rtl,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.inder(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 25,
+                      color: Colors.black),
+                );
+              },
+              itemCount: showSura.length,
+            ),
           ),
         ),
       ),
