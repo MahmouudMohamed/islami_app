@@ -15,11 +15,11 @@ class _SebhaTabState extends State<SebhaTab> {
   int counter = 0;
   double turns=0.1;
 
-  List<String> payerNames = [
-    "سبحان الله",
-    "الحمد لله",
-    "لا الله إلا الله",
-    "الله أكبر"
+  List<String> prayNames = [
+    "سبحان اللَّهِ",
+    "الحمد للَّهِ",
+    "لا اللَّهِ إلا اللَّهِ",
+    "اللَّهِ أكبر"
   ];
 
   @override
@@ -28,6 +28,7 @@ class _SebhaTabState extends State<SebhaTab> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(height: 25,),
           Stack(
               clipBehavior: Clip.none,
               children:[
@@ -86,7 +87,7 @@ class _SebhaTabState extends State<SebhaTab> {
               ),
               child: Center(
                   child: Text(
-                                payerNames[index],
+                                prayNames[index],
                                 style: GoogleFonts.inder(
                     fontWeight: FontWeight.w400,
                     fontSize: 25,
@@ -104,22 +105,22 @@ class _SebhaTabState extends State<SebhaTab> {
   incrementPrayer(){
     setState(() {
       counter++;
-      if(counter==34&&index==0){
+      if(counter==33){
         index++;
         counter=0;
       }
-      else if (counter==33&&index==1){
-        index++;
-        counter=0;
-      }
-      else if (counter==33&&index==2){
-        index++;
-        counter=0;
-      }
-      else if (counter==33&&index==3){
+      if (index==prayNames.length){
         index=0;
         counter=0;
       }
+      // else if (counter==33&&index==2){
+      //   index++;
+      //   counter=0;
+      // }
+      // else if (counter==33&&index==3){
+      //   index=0;
+      //   counter=0;
+      // }
     });
   }
 }
