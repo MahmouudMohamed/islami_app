@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,11 +22,11 @@ class QuranTabs extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              "Ayat Number",
+              "ayat".tr(),
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             Text(
-              "Sura Name",
+              "sura_name".tr(),
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],

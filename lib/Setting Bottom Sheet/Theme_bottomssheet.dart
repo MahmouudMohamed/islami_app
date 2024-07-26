@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../my_theme_data.dart';
@@ -8,7 +9,7 @@ class ThemeBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var proTheme=Provider.of<MyProvider>(context);
+    var proTheme = Provider.of<MyProvider>(context);
     return Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(
@@ -23,13 +24,19 @@ class ThemeBottomSheet extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  proTheme.mode == ThemeMode.light ?
-                  Text(
-                    "Light",style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: MyThemeData.primaryColor),
-                  ):  Text(
-                      "Light",style: Theme.of(context).textTheme.bodyLarge
-                  ),
-                  proTheme.mode == ThemeMode.light? Icon(Icons.done,color: MyThemeData.primaryColor,):SizedBox()
+               Text("light".tr(),
+                          style: proTheme.mode == ThemeMode.light
+                              ? Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.copyWith(color: MyThemeData.primaryColor)
+                              : Theme.of(context).textTheme.bodyLarge),
+                       proTheme.mode == ThemeMode.light
+                          ? Icon(
+                              Icons.done,
+                              color: MyThemeData.primaryColor,
+                            )
+                          : SizedBox()
                 ],
               ),
             ),
@@ -37,18 +44,20 @@ class ThemeBottomSheet extends StatelessWidget {
               height: 25,
             ),
             InkWell(
-               overlayColor: WidgetStateColor.transparent,
+              overlayColor: WidgetStateColor.transparent,
               onTap: () {
                 proTheme.ChangeTheme(ThemeMode.dark);
                 Navigator.pop(context);
+
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Dark",
-                    style: Theme.of(context).textTheme.displayLarge),
-                  proTheme.mode == ThemeMode.dark ? Icon(Icons.done):SizedBox()
+                  Text("dark".tr(),
+                      style: Theme.of(context).textTheme.displayLarge),
+                  proTheme.mode == ThemeMode.dark
+                      ? Icon(Icons.done,color: MyThemeData.yellowColor,)
+                      : SizedBox()
                 ],
               ),
             ),
