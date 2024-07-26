@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,11 +26,12 @@ class AhadethTab extends StatelessWidget {
             ),
             Divider(),
             Text(
-              "Ahadeth",
+              "ahadeth".tr(),
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             Divider(),
+            SizedBox(height: 10,),
             Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) {
@@ -47,7 +49,7 @@ class AhadethTab extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
 
-                          Divider(),
+                          SizedBox(height: 25,),
                         ],
                       ),
 

@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:islami_app/home/tabs/ahadeth.dart';
 import 'package:islami_app/home/tabs/quran.dart';
 import 'package:islami_app/home/tabs/radio.dart';
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Scaffold(
         appBar: AppBar(
           title: Text(
-            "Islami",
+            "islami".tr(),
             style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
@@ -45,23 +46,23 @@ class _HomeScreenState extends State<HomeScreen> {
             items: [
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/moshaf_light.png")),
-                label: "Quran",
+                label: "quran".tr(),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/ahadeth_light.png")),
-                label: "Ahadeth",
+                label: "ahadeth".tr(),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/sebha_light.png")),
-                label: "Sebha",
+                label: "sebha".tr(),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/radio_light.png")),
-                label: "Radio",
+                label: "radio".tr(),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
-                label: "Setting",
+                label: "setting".tr(),
               ),
             ]),
         body: tabs[index],

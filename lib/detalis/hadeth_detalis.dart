@@ -35,6 +35,7 @@ class hadethDetalisScreen extends StatelessWidget {
             body: Card(
               child: ListView.builder(
                 itemBuilder: (context, index) {
+
                   return Text(
                     p1.content[index],
                     textDirection: TextDirection.rtl,
