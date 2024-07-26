@@ -26,20 +26,13 @@ class _AhadethTabState extends State<AhadethTab> {
           "assets/image/ahadeth.png",
           height: 219,
         ),
-        Divider(
-          thickness: 3,
-          color: Color(0xFFB7935F),
-        ),
+        Divider(),
         Text(
           "Ahadeth",
           textAlign: TextAlign.center,
-          style:
-          GoogleFonts.elMessiri(fontWeight: FontWeight.w600, fontSize: 25),
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
-        Divider(
-          thickness: 3,
-          color: Color(0xFFB7935F),
-        ),
+        Divider(),
         Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) {
@@ -54,15 +47,10 @@ class _AhadethTabState extends State<AhadethTab> {
                         "الحديث رقم ${ index + 1}",
                         // "${allAhageth[index].title}",
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.inder(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w400,
+                    style: Theme.of(context).textTheme.displayMedium,
                         ),
-                      ),
-                      Divider(
-                        thickness: 3,
-                        color: Color(0xFFB7935F),
-                      ),
+
+                      Divider(),
                     ],
                   ),
 

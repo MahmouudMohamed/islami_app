@@ -5,6 +5,8 @@ import 'package:islami_app/home/tabs/quran.dart';
 import 'package:islami_app/home/tabs/radio.dart';
 import 'package:islami_app/home/tabs/sebha.dart';
 import 'package:islami_app/home/tabs/setting.dart';
+import 'package:islami_app/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
@@ -20,58 +22,46 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var proBack = Provider.of<MyProvider>(context);
     return Stack(
         children: [
-      Image.asset("assets/image/main_bg.png"),
+      Image.asset(
+        proBack.mode == ThemeMode.light?
+        "assets/image/main_bg.png":"assets/image/bg_dark.png",
+        fit: BoxFit.fill,width: double.infinity,),
       Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
-          elevation: 0,
-          scrolledUnderElevation: 0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
           title: Text(
             "Islami",
-            style: GoogleFonts.elMessiri(
-                fontSize: 30, fontWeight: FontWeight.w700),
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.shifting,
             currentIndex: index,
             onTap: (value) {
               index = value;
               setState(() {});
             },
-            selectedItemColor: Colors.black,
-            unselectedItemColor: Colors.white,
-            showUnselectedLabels: false,
-
             items: [
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/moshaf_light.png")),
                 label: "Quran",
-                backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/ahadeth_light.png")),
                 label: "Ahadeth",
-                backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/sebha_light.png")),
                 label: "Sebha",
-                backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/radio_light.png")),
                 label: "Radio",
-                backgroundColor: Color(0xffB7935F),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
                 label: "Setting",
-                backgroundColor: Color(0xffB7935F),
               ),
             ]),
         body: tabs[index],

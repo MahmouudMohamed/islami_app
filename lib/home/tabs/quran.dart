@@ -16,33 +16,25 @@ class QuranTabs extends StatelessWidget {
         Image.asset(
           "assets/image/quran.png",
         ),
-        Divider(
-          thickness: 3,
-          color: Color(0xFFB7935F),
-        ),
+        Divider(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
               "Ayat Number",
-              style: GoogleFonts.elMessiri(
-                  fontWeight: FontWeight.w600, fontSize: 25),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             Text(
               "Sura Name",
-              style: GoogleFonts.elMessiri(
-                  fontWeight: FontWeight.w600, fontSize: 25),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
         ),
-        Divider(
-          thickness: 3,
-          color: Color(0xFFB7935F),
-        ),
+        Divider(),
         Expanded(
             child: ListView.builder(
                 itemBuilder: (context, index) {
-                  return InkWell(
+                  return GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, SuraDetalisScreen.routeName,
                           arguments: SuraModel(suraNames[index], index));
@@ -56,8 +48,7 @@ class QuranTabs extends StatelessWidget {
                               Text(
                                 "${ayaNumber[index].toString()}",
                                 textAlign: TextAlign.center,
-                                style: GoogleFonts.inder(
-                                    fontSize: 25, fontWeight: FontWeight.w400),
+                                style: Theme.of(context).textTheme.displayMedium,
                               ),
                             ],
                           ),
@@ -71,8 +62,7 @@ class QuranTabs extends StatelessWidget {
                               Text(
                                 "${suraNames[index]}",
                                 textAlign: TextAlign.center,
-                                style: GoogleFonts.inder(
-                                    fontSize: 25, fontWeight: FontWeight.w400),
+                                style: Theme.of(context).textTheme.displayMedium,
                               ),
                             ],
                           ),
