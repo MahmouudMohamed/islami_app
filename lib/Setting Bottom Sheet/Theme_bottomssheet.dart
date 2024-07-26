@@ -15,8 +15,10 @@ class ThemeBottomSheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             InkWell(
+              overlayColor: WidgetStateColor.transparent,
               onTap: () {
                 proTheme.ChangeTheme(ThemeMode.light);
+                Navigator.pop(context);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,7 +29,7 @@ class ThemeBottomSheet extends StatelessWidget {
                   ):  Text(
                       "Light",style: Theme.of(context).textTheme.bodyLarge
                   ),
-                  Icon(Icons.done)
+                  proTheme.mode == ThemeMode.light? Icon(Icons.done,color: MyThemeData.primaryColor,):SizedBox()
                 ],
               ),
             ),
@@ -35,8 +37,10 @@ class ThemeBottomSheet extends StatelessWidget {
               height: 25,
             ),
             InkWell(
+               overlayColor: WidgetStateColor.transparent,
               onTap: () {
                 proTheme.ChangeTheme(ThemeMode.dark);
+                Navigator.pop(context);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +48,7 @@ class ThemeBottomSheet extends StatelessWidget {
                   Text(
                     "Dark",
                     style: Theme.of(context).textTheme.displayLarge),
-                  // Icon(Icons.done)
+                  proTheme.mode == ThemeMode.dark ? Icon(Icons.done):SizedBox()
                 ],
               ),
             ),

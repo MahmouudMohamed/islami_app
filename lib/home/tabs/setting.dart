@@ -14,8 +14,9 @@ class SettingTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(height: 30,),
           Text("Theme",style: Theme.of(context).textTheme.bodyLarge,),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           InkWell(
             onTap: () {
               showModalBottomSheet(
@@ -38,7 +39,8 @@ class SettingTab extends StatelessWidget {
           SizedBox(height: 20,),
           InkWell(
             onTap: () {
-              showModalBottomSheet(context: context,
+              showModalBottomSheet(
+                context: context,
                 builder: (context) => LanguageBottomSheet(),
               );
             },
@@ -52,11 +54,6 @@ class SettingTab extends StatelessWidget {
               child: Text("English",style: Theme.of(context).textTheme.displayLarge,),
             ),
           ),
-
-
-
-
-
         ],
       ),
     );

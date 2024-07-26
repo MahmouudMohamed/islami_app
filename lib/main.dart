@@ -9,7 +9,12 @@ import 'package:provider/provider.dart';
 import 'detalis/hadeth_detalis.dart';
 
 void main() {
-  runApp( ChangeNotifierProvider(create: (context) => MyProvider(),
+  runApp( MultiProvider(
+      providers: [
+      ChangeNotifierProvider(
+      create: (context) => MyProvider(),),
+
+      ],
       child: MyApp()));
 }
 

@@ -14,7 +14,6 @@ class SebhaTab extends StatefulWidget {
 
 class _SebhaTabState extends State<SebhaTab> {
   int index = 0;
-
   int counter = 0;
   double turns = 0.1;
 
@@ -33,7 +32,7 @@ class _SebhaTabState extends State<SebhaTab> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 40,
+            height: 30,
           ),
           Stack(clipBehavior: Clip.none, children: [
             GestureDetector(
@@ -51,13 +50,14 @@ class _SebhaTabState extends State<SebhaTab> {
                             ? 'assets/image/body_light.png'
                             : 'assets/image/body_dark.png')))),
             Positioned(
-                top: -55,
-                right: 85,
+                top: -78,
+                right: 60,
                 child: Image(
                     image: AssetImage(proSebha.mode == ThemeMode.light
                         ? 'assets/image/head_light.png'
                         : 'assets/image/head_dark.png')))
           ]),
+          SizedBox(height: 20,),
           Text(
             "عدد التسبيحات",
             style: Theme.of(context).textTheme.bodyMedium,
@@ -83,6 +83,7 @@ class _SebhaTabState extends State<SebhaTab> {
             height: 30,
           ),
           InkWell(
+            overlayColor: WidgetStateColor.transparent,
             onTap: incrementPrayer,
             child: Container(
               height: 80,
@@ -90,7 +91,7 @@ class _SebhaTabState extends State<SebhaTab> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(35.0),
                   color: proSebha.mode == ThemeMode.light
-                      ? Color(0xff141A2E)
+                      ? Color(0xffB7935F)
                       : MyThemeData.yellowColor),
               child: Center(
                   child: Text(

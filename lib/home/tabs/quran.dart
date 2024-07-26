@@ -48,7 +48,7 @@ class QuranTabs extends StatelessWidget {
                               Text(
                                 "${ayaNumber[index].toString()}",
                                 textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.displayMedium,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),
@@ -62,7 +62,7 @@ class QuranTabs extends StatelessWidget {
                               Text(
                                 "${suraNames[index]}",
                                 textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.displayMedium,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),

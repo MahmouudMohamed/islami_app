@@ -68,7 +68,7 @@ class MyThemeData {
   );
 
   static ThemeData darkTheme = ThemeData(
-      iconTheme: IconThemeData(color: yellowColor),
+   iconTheme: IconThemeData(color: yellowColor),
     primaryColor: primaryDarkColor,
 
       iconButtonTheme: IconButtonThemeData(
@@ -121,10 +121,7 @@ class MyThemeData {
     ),
       bottomSheetTheme: BottomSheetThemeData(
       backgroundColor:primaryDarkColor,
-
-
-
-
   ),
+
   );
 }
