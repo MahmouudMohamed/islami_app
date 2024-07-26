@@ -21,8 +21,7 @@ class RadioTab extends StatelessWidget {
         ),
         Text(
           "إذاعة القرأن الكريم",
-          style:
-              GoogleFonts.elMessiri(fontSize: 25, fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         SizedBox(
           height: 35,
@@ -34,22 +33,16 @@ class RadioTab extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(
                   Icons.skip_previous,
-                  color: Color(0xffB7935F),
-                  size: 50,
                 )),
             IconButton(
                 onPressed: () {},
                 icon: Icon(
                   Icons.play_arrow,
-                  color: Color(0xffB7935F),
-                  size: 50,
                 )),
             IconButton(
                 onPressed: () {},
                 icon: Icon(
                   Icons.skip_next,
-                  color: Color(0xffB7935F),
-                  size: 50,
                 )),
           ],
         )
