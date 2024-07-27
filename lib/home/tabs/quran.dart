@@ -1,9 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/sura_model.dart';
+import 'package:islami_app/model/sura_model.dart';
 
-import '../../sura_detalis.dart';
+import '../../detalis/sura_detalis.dart';
 
 class QuranTabs extends StatelessWidget {
   QuranTabs({super.key});
@@ -25,76 +26,76 @@ class QuranTabs extends StatelessWidget {
               children: [
 
                 Column(
-                  children: [
-                    Divider(
-                      thickness: 3,
-                      color: Color(0xFFB7935F),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          "Ayat Number",
-                          style: GoogleFonts.elMessiri(
-                              fontWeight: FontWeight.w600, fontSize: 25),
-                        ),
-                        Text(
-                          "Sura Name",
-                          style: GoogleFonts.elMessiri(
-                              fontWeight: FontWeight.w600, fontSize: 25),
-                        ),
-                      ],
-                    ),
-                    Divider(
-                      thickness: 3,
-                      color: Color(0xFFB7935F),
-                    ),
-                    Expanded(
-                        child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(context, SuraDetalisScreen.routeName,
-                                      arguments: SuraModel(suraNames[index], index));
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Expanded(
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            "${ayaNumber[index].toString()}",
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.inder(
-                                                fontSize: 25, fontWeight: FontWeight.w400),
-                                          ),
-                                        ],
-                                      ),
+                children: [
+                  Divider(
+                    thickness: 3,
+                    color: Color(0xFFB7935F),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Ayat Number",
+                        style: GoogleFonts.elMessiri(
+                            fontWeight: FontWeight.w600, fontSize: 25),
+                      ),
+                      Text(
+                        "Sura Name",
+                        style: GoogleFonts.elMessiri(
+                            fontWeight: FontWeight.w600, fontSize: 25),
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    thickness: 3,
+                    color: Color(0xFFB7935F),
+                  ),
+                  Expanded(
+                      child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, SuraDetalisScreen.routeName,
+                                    arguments: SuraModel(suraNames[index], index));
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "${ayaNumber[index].toString()}",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.inder(
+                                              fontSize: 25, fontWeight: FontWeight.w400),
+                                        ),
+                                      ],
                                     ),
-                                    SizedBox(
-                                      height: 45,
+                                  ),
+                                  SizedBox(
+                                    height: 45,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "${suraNames[index]}",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.inder(
+                                              fontSize: 25, fontWeight: FontWeight.w400),
+                                        ),
+                                      ],
                                     ),
-                                    Expanded(
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            "${suraNames[index]}",
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.inder(
-                                                fontSize: 25, fontWeight: FontWeight.w400),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                            itemCount: suraNames.length)),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          itemCount: suraNames.length)),
 
-                  ],
-                ),
+                ],
+              ),
                 Center(
                     child: VerticalDivider(
                       thickness: 3,
@@ -102,7 +103,7 @@ class QuranTabs extends StatelessWidget {
                       indent: 9.5,)),
               ],
 
-            )
+              )
         )
       ],
     );

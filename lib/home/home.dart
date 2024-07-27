@@ -1,10 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:islami_app/home/tabs/ahadeth.dart';
 import 'package:islami_app/home/tabs/quran.dart';
 import 'package:islami_app/home/tabs/radio.dart';
 import 'package:islami_app/home/tabs/sebha.dart';
 import 'package:islami_app/home/tabs/setting.dart';
+import 'package:islami_app/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
@@ -20,56 +23,46 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var proBack = Provider.of<MyProvider>(context);
     return Stack(
         children: [
-      Image.asset("assets/image/main_bg.png"),
+      Image.asset(
+        proBack.mode == ThemeMode.light?
+        "assets/image/main_bg.png":"assets/image/bg_dark.png",
+        fit: BoxFit.fill,width: double.infinity,),
       Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
           title: Text(
-            "Islami",
-            style: GoogleFonts.elMessiri(
-                fontSize: 30, fontWeight: FontWeight.w700),
+            "islami".tr(),
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.shifting,
             currentIndex: index,
             onTap: (value) {
               index = value;
               setState(() {});
             },
-            selectedItemColor: Colors.black,
-            unselectedItemColor: Colors.white,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
             items: [
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/moshaf_light.png")),
-                label: "",
-                backgroundColor: Color(0xffB7935F),
+                label: "quran".tr(),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/ahadeth_light.png")),
-                label: "",
-                backgroundColor: Color(0xffB7935F),
+                label: "ahadeth".tr(),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/sebha_light.png")),
-                label: "",
-                backgroundColor: Color(0xffB7935F),
+                label: "sebha".tr(),
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/image/radio_light.png")),
-                label: "",
-                backgroundColor: Color(0xffB7935F),
+                label: "radio".tr(),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
-                label: "",
-                backgroundColor: Color(0xffB7935F),
+                label: "setting".tr(),
               ),
             ]),
         body: tabs[index],
