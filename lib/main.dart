@@ -15,7 +15,7 @@ void main() async {
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => MyProvider(),
+          create: (context) => MyProvider()..getTheme(),
         ),
       ],
       child: EasyLocalization(
@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
+    // provider.getTheme();
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
