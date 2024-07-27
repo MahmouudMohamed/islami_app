@@ -14,65 +14,97 @@ class QuranTabs extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(
-          "assets/image/quran.png",
-        ),
-        Divider(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text(
-              "ayat".tr(),
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            Text(
-              "sura_name".tr(),
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ],
-        ),
-        Divider(),
         Expanded(
-            child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, SuraDetalisScreen.routeName,
-                          arguments: SuraModel(suraNames[index], index));
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text(
-                                "${ayaNumber[index].toString()}",
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.bodyMedium,
+          flex: 3,
+          child: Image.asset(
+            "assets/image/quran.png",
+          ),
+        ),
+        Expanded(
+            flex: 7,
+            child: Stack(
+              children: [
+
+                Column(
+                children: [
+                  Divider(
+                    thickness: 3,
+                    color: Color(0xFFB7935F),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Ayat Number",
+                        style: GoogleFonts.elMessiri(
+                            fontWeight: FontWeight.w600, fontSize: 25),
+                      ),
+                      Text(
+                        "Sura Name",
+                        style: GoogleFonts.elMessiri(
+                            fontWeight: FontWeight.w600, fontSize: 25),
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    thickness: 3,
+                    color: Color(0xFFB7935F),
+                  ),
+                  Expanded(
+                      child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, SuraDetalisScreen.routeName,
+                                    arguments: SuraModel(suraNames[index], index));
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "${ayaNumber[index].toString()}",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.inder(
+                                              fontSize: 25, fontWeight: FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 45,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "${suraNames[index]}",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.inder(
+                                              fontSize: 25, fontWeight: FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 45,
-                        ),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text(
-                                "${suraNames[index]}",
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-                itemCount: suraNames.length))
+                            );
+                          },
+                          itemCount: suraNames.length)),
+
+                ],
+              ),
+                Center(
+                    child: VerticalDivider(
+                      thickness: 3,
+                      color: Colors.teal,
+                      indent: 9.5,)),
+              ],
+
+              )
+        )
       ],
     );
   }
