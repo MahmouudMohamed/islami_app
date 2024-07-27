@@ -53,9 +53,9 @@ class MyThemeData {
       thickness: 3
     ),
       cardTheme: CardTheme(
-        margin: EdgeInsets.symmetric(horizontal: 24,vertical: 20),
+        margin: EdgeInsets.symmetric(horizontal: 24,vertical: 30),
         color: Color.fromRGBO(248, 248, 248, 30),
-        elevation: 24,
+        elevation: 0,
         shape: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
             borderSide: BorderSide(color: Colors.transparent)),
@@ -112,9 +112,9 @@ class MyThemeData {
           thickness: 3
       ),
     cardTheme: CardTheme(
-      margin: EdgeInsets.symmetric(horizontal: 24,vertical: 20),
+      margin: EdgeInsets.symmetric(horizontal: 24,vertical: 30),
       color: Color(0xff141A2E),
-      elevation: 24,
+      elevation: 0,
       shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25),
           borderSide: BorderSide(color: Colors.transparent)),
