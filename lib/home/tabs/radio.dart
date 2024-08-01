@@ -30,8 +30,11 @@ class RadioTab extends StatelessWidget {
           children: [
             IconButton(
                 onPressed: () {},
-                icon: Icon(
-                  Icons.skip_previous,
+                icon: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Icon(
+                    Icons.skip_previous,
+                  ),
                 )),
             IconButton(
                 onPressed: () {},
@@ -40,8 +43,11 @@ class RadioTab extends StatelessWidget {
                 )),
             IconButton(
                 onPressed: () {},
-                icon: Icon(
-                  Icons.skip_next,
+                icon: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Icon(
+                    Icons.skip_next,
+                  ),
                 )),
           ],
         )
