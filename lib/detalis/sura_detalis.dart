@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/model/sura_model.dart';
 import 'package:provider/provider.dart';
 import '../providers/Sura_detalis_provider.dart';
-import '../providers/Sura_detalis_provider.dart';
 import '../providers/my_provider.dart';
 
 class SuraDetalisScreen extends StatelessWidget {

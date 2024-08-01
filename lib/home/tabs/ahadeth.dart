@@ -1,9 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/detalis/hadeth_detalis.dart';
-import 'package:islami_app/model/hadeth_model.dart';
 import 'package:islami_app/providers/hadeth_detalis_provider.dart';
 import 'package:provider/provider.dart';
 
