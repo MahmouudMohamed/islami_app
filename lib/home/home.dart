@@ -1,18 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'package:islami_app/home/tabs/ahadeth.dart';
-import 'package:islami_app/home/tabs/quran.dart';
-import 'package:islami_app/home/tabs/radio.dart';
+import 'package:islami_app/home/Quran%20Tab/ui/quran.dart';
+import 'package:islami_app/home/tabs/Setting%20Tab/provider/my_provider.dart';
+import 'package:islami_app/home/Radio%20Tab/ui/radio.dart';
 import 'package:islami_app/home/tabs/sebha.dart';
-import 'package:islami_app/home/tabs/setting.dart';
-import 'package:islami_app/providers/my_provider.dart';
+import 'package:islami_app/home/tabs/Setting%20Tab/setting.dart';
 import 'package:provider/provider.dart';
+
+import 'Ahadeth Tab/ui/ahadeth.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
 
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -74,22 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
     QuranTabs(),
     AhadethTab(),
     SebhaTab(),
-    RadioTab(),
-    SettingTab()
+     RadioTab(),
+    const SettingTab()
   ];
 }
-//ListView.separated(
-//                 itemBuilder: (context, index) {
-//                   return Text(
-//                     suraNames[index],
-//                     textAlign: TextAlign.center,
-//                     style: GoogleFonts.inder(
-//                         fontSize: 25, fontWeight: FontWeight.w400),
-//                   );
-//                 },
-//                 separatorBuilder: (context, index) {
-//                   return Divider(
-//                     color: Color(0xFFB7935F),
-//                   );
-//                 },
-//                 itemCount: 114)

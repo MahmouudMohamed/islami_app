@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/providers/hadeth_detalis_provider.dart';
 import 'package:provider/provider.dart';
+import '../../tabs/Setting Tab/provider/my_provider.dart';
 import '../model/hadeth_model.dart';
-import '../providers/my_provider.dart';
+import '../provider/hadeth_detalis_provider.dart';
 
 class hadethDetalisScreen extends StatelessWidget {
   static const String routeName = "hadeth";

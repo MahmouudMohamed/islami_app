@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
+import 'package:islami_app/utils/theme/my_theme_data.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/my_provider.dart';
+import 'Setting Tab/provider/my_provider.dart';
+
 
 class SebhaTab extends StatefulWidget {
   SebhaTab({super.key});
@@ -30,7 +31,7 @@ class _SebhaTabState extends State<SebhaTab> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Stack(clipBehavior: Clip.none, children: [
@@ -56,12 +57,12 @@ class _SebhaTabState extends State<SebhaTab> {
                         ? 'assets/image/head_light.png'
                         : 'assets/image/head_dark.png')))
           ]),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Text(
             "عدد التسبيحات",
             style: Theme.of(context).textTheme.bodyMedium,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
@@ -78,7 +79,7 @@ class _SebhaTabState extends State<SebhaTab> {
               style: Theme.of(context).textTheme.bodyMedium,
             )),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           InkWell(

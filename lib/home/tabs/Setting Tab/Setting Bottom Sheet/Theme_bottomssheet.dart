@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../my_theme_data.dart';
-import '../providers/my_provider.dart';
+import '../../../../utils/theme/my_theme_data.dart';
+import '../provider/my_provider.dart';
 
 class ThemeBottomSheet extends StatelessWidget {
   const ThemeBottomSheet({super.key});
@@ -36,11 +36,11 @@ class ThemeBottomSheet extends StatelessWidget {
                               Icons.done,
                               color: MyThemeData.primaryColor,
                             )
-                          : SizedBox()
+                          : const SizedBox()
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             InkWell(
@@ -57,7 +57,7 @@ class ThemeBottomSheet extends StatelessWidget {
                       style: Theme.of(context).textTheme.displayLarge),
                   proTheme.mode == ThemeMode.dark
                       ? Icon(Icons.done,color: MyThemeData.yellowColor,)
-                      : SizedBox()
+                      : const SizedBox()
                 ],
               ),
             ),

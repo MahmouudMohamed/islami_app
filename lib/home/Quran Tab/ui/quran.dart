@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/model/sura_model.dart';
+import 'package:islami_app/home/Quran%20Tab/model/sura_model.dart';
 
-import '../../detalis/sura_detalis.dart';
+import 'sura_detalis.dart';
 
 class QuranTabs extends StatelessWidget {
   QuranTabs({super.key});

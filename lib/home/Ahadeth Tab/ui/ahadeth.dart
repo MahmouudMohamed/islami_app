@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:islami_app/detalis/hadeth_detalis.dart';
-import 'package:islami_app/providers/hadeth_detalis_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../provider/hadeth_detalis_provider.dart';
+import 'hadeth_detalis.dart';
 
 class AhadethTab extends StatelessWidget {
   AhadethTab({super.key});
@@ -28,8 +28,8 @@ class AhadethTab extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
-            Divider(),
-            SizedBox(height: 10,),
+            const Divider(),
+            const SizedBox(height: 10,),
             Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) {
@@ -47,7 +47,7 @@ class AhadethTab extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
 
-                          SizedBox(height: 25,),
+                          const SizedBox(height: 25,),
                         ],
                       ),
 

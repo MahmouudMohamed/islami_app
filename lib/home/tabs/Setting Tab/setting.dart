@@ -1,11 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
+import 'package:islami_app/home/tabs/Setting%20Tab/provider/my_provider.dart';
+import 'package:islami_app/utils/theme/my_theme_data.dart';
 import 'package:provider/provider.dart';
-
-import '../../Setting Bottom Sheet/Language_bottomssheet.dart';
-import '../../Setting Bottom Sheet/Theme_bottomssheet.dart';
-import '../../providers/my_provider.dart';
+import 'Setting Bottom Sheet/Language_bottomssheet.dart';
+import 'Setting Bottom Sheet/Theme_bottomssheet.dart';
 
 class SettingTab extends StatelessWidget {
   const SettingTab({super.key});
@@ -13,7 +12,7 @@ class SettingTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var proText=Provider.of<MyProvider>(context);
-    return Padding(
+    return  Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
