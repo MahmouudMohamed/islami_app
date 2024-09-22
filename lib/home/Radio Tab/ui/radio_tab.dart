@@ -68,4 +68,12 @@ class _RadioTabInfoState extends State<RadioTabInfo> {
       ],
     );
   }
+
+// @override
+// void dispose() {
+//   widget.player.dispose();
+//   super.dispose();
+// }
+
+
 }
