@@ -35,11 +35,6 @@ class SuraDetalisScreen extends StatelessWidget {
                   model.name,
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
-                // SizedBox(height: 5,),
-                // Text(
-                //   quran.basmala,
-                //   style: GoogleFonts.amiri(fontSize: 25,fontWeight: FontWeight.bold),
-                // ),
               ],
             ),
           ),
