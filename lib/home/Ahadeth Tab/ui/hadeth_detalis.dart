@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart'as tr;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../tabs/Setting Tab/provider/my_provider.dart';
@@ -28,25 +29,37 @@ class hadethDetalisScreen extends StatelessWidget {
           child: Scaffold(
             appBar: AppBar(
               title: Text(
-                model.title,
-                style: Theme.of(context).textTheme.bodyLarge,
+               model.title,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 28),
               ),
             ),
-            body: Card(
-              child: ListView.builder(
-                itemBuilder: (context, index) {
+            body: Column(
+              children: [
+                Expanded(
+                  child: Card(
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Text(
+                          p1.content[index],
+                          textDirection: TextDirection.rtl,
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.displayMedium,
+                        );
+                      },
+                      itemCount:p1.content.length,
+                    ),
+                  ),
+                ),
+                Image.asset(
+                    "assets/image/Mosque-02.png"
+                ),
+              ],
+            ),
+            // body:
 
-                  return Text(
-                    p1.content[index],
-                    textDirection: TextDirection.rtl,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.displayMedium,
-                  );
-                },
-                itemCount:p1.content.length,
-              ),
+
             ),
-          ),
+
         );
       },
 

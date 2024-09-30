@@ -17,18 +17,18 @@ class SettingTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Text("theme".tr(),style: Theme.of(context).textTheme.bodyLarge,),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           InkWell(
             onTap: () {
               showModalBottomSheet(
                 context: context,
-                builder: (context) => ThemeBottomSheet(),
+                builder: (context) => const ThemeBottomSheet(),
               );
             },
             child: Container(
-              padding: EdgeInsets.all(14),
+              padding: const EdgeInsets.all(14),
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
@@ -37,24 +37,24 @@ class SettingTab extends StatelessWidget {
               child: Text(proText.mode== ThemeMode.light?"light".tr():"dark".tr(),style: Theme.of(context).textTheme.displayLarge,),
             ),
           ),
-          SizedBox(height: 40,),
+          const SizedBox(height: 40,),
           Text("language".tr(),style: Theme.of(context).textTheme.bodyLarge,),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           InkWell(
             onTap: () {
               showModalBottomSheet(
                 context: context,
-                builder: (context) => LanguageBottomSheet(),
+                builder: (context) => const LanguageBottomSheet(),
               );
             },
             child: Container(
-              padding: EdgeInsets.all(14),
+              padding: const EdgeInsets.all(14),
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 border: Border.all(color: MyThemeData.primaryColor)
               ),
-              child: Text(context.locale == Locale("ar")?"arabic".tr():"english".tr(),style: Theme.of(context).textTheme.displayLarge,),
+              child: Text(context.locale == const Locale("ar")?"arabic".tr():"english".tr(),style: Theme.of(context).textTheme.displayLarge,),
             ),
           ),
         ],

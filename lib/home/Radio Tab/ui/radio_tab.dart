@@ -41,7 +41,7 @@ class _RadioTabInfoState extends State<RadioTabInfo> {
                 onPressed: () {
                   widget.back();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_circle_left_rounded,
                 )),
             IconButton(
@@ -54,13 +54,13 @@ class _RadioTabInfoState extends State<RadioTabInfo> {
                   setState(() {});
                 },
                 icon: !isPlaying
-                    ? Icon(Icons.play_circle_outline)
-                    : Icon(Icons.pause_circle_outline)),
+                    ? const Icon(Icons.play_circle_outline)
+                    : const Icon(Icons.pause_circle_outline)),
             IconButton(
                 onPressed: () {
                   widget.next();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.next_plan_rounded,
                 )),
           ],

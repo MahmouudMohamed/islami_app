@@ -11,4 +11,8 @@ class SuraDetalisProvider extends ChangeNotifier {
     showSura = suraLines;
     notifyListeners();
   }
+
+
+
+
 }

@@ -14,42 +14,42 @@ class LanguageBottomSheet extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              context.setLocale(Locale("ar"));
+              context.setLocale(const Locale("ar"));
               Navigator.pop(context);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("arabic".tr(),
-                    style: context.locale == Locale("ar")
+                    style: context.locale == const Locale("ar")
                         ? Theme.of(context)
                             .textTheme
                             .bodyLarge
                             ?.copyWith(color: MyThemeData.primaryColor)
                         : Theme.of(context).textTheme.bodyLarge),
-                context.locale == Locale("ar") ? Icon(Icons.done,color: MyThemeData.primaryColor,) : SizedBox()
+                context.locale == const Locale("ar") ? Icon(Icons.done,color: MyThemeData.primaryColor,) : const SizedBox()
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           InkWell(
             onTap: () {
-              context.setLocale(Locale("en"));
+              context.setLocale(const Locale("en"));
               Navigator.pop(context);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("english".tr(),
-                    style: context.locale == Locale("en")
+                    style: context.locale == const Locale("en")
                         ? Theme.of(context)
                             .textTheme
                             .bodyLarge
                             ?.copyWith(color: MyThemeData.yellowColor)
                         : Theme.of(context).textTheme.bodyLarge),
-                context.locale == Locale("en") ? Icon(Icons.done,color: MyThemeData.yellowColor,) : SizedBox()
+                context.locale == const Locale("en") ? Icon(Icons.done,color: MyThemeData.yellowColor,) : const SizedBox()
               ],
             ),
           ),

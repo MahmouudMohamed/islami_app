@@ -28,10 +28,13 @@ class _RadioTabState extends State<RadioTab> {
         ),
         Image.asset(
           "assets/image/radio.png",
+         color:  proBack.mode == ThemeMode.light
+              ? Colors.black
+              : Colors.white,
           height: MediaQuery.of(context).size.height * 0.3,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.01,
+          height: MediaQuery.of(context).size.height * 0.05,
         ),
         FutureBuilder(
           future: ApiManger.getRadio(),

@@ -17,15 +17,15 @@ void main() async {
         ),
       ],
       child: EasyLocalization(
-        supportedLocales: [Locale('en'), Locale('ar')],
+        supportedLocales: const [Locale('en'), Locale('ar')],
         path: 'assets/translations',
         saveLocale: true,
-        child: MyApp(),
+        child: const MyApp(),
       )));
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

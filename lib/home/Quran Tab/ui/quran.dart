@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home/Quran%20Tab/ui/custom_quran.dart';
+import 'package:provider/provider.dart';
+import '../../tabs/Setting Tab/provider/my_provider.dart';
 
 class QuranTabs extends StatelessWidget {
   QuranTabs({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var proBack = Provider.of<MyProvider>(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(
-          "assets/image/quran.png",
-        ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
         Expanded(
+          flex: 4,
+          child: Image.asset(
+            "assets/image/kabba.png",color: proBack.mode == ThemeMode.light
+              ? Colors.black
+              : Colors.white,
+          ),
+        ),
+        const Divider(),
+        Expanded(
+          flex: 7,
             child: ListView.separated(
                 itemBuilder: (context, index) {
                   return CustomQuran(index: index);

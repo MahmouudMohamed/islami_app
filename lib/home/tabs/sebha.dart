@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/utils/theme/my_theme_data.dart';
 import 'package:provider/provider.dart';
@@ -6,7 +7,7 @@ import 'Setting Tab/provider/my_provider.dart';
 
 
 class SebhaTab extends StatefulWidget {
-  SebhaTab({super.key});
+  const SebhaTab({super.key});
 
   @override
   State<SebhaTab> createState() => _SebhaTabState();
@@ -44,7 +45,7 @@ class _SebhaTabState extends State<SebhaTab> {
                 },
                 child: AnimatedRotation(
                     turns: turns,
-                    duration: Duration(milliseconds: 10),
+                    duration: const Duration(milliseconds: 10),
                     child: Image(
                         image: AssetImage(proSebha.mode == ThemeMode.light
                             ? 'assets/image/body_light.png'
@@ -59,7 +60,7 @@ class _SebhaTabState extends State<SebhaTab> {
           ]),
           const SizedBox(height: 20,),
           Text(
-            "عدد التسبيحات",
+            "number".tr(),
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           const SizedBox(
@@ -71,8 +72,8 @@ class _SebhaTabState extends State<SebhaTab> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(35.0),
                 color: proSebha.mode == ThemeMode.light
-                    ? Color.fromRGBO(183, 147, 95, 100)
-                    : Color(0xff141A2E)),
+                    ? const Color.fromRGBO(183, 147, 95, 100)
+                    : const Color(0xff141A2E)),
             child: Center(
                 child: Text(
               counter.toString(),
@@ -91,7 +92,7 @@ class _SebhaTabState extends State<SebhaTab> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(35.0),
                   color: proSebha.mode == ThemeMode.light
-                      ? Color(0xffB7935F)
+                      ? const Color(0xffB7935F)
                       : MyThemeData.yellowColor),
               child: Center(
                   child: Text(

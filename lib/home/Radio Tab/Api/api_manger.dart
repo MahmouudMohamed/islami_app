@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'package:islami_app/home/Radio%20Tab/model/RadioStation.dart';
 
 class ApiManger {
-//https://mp3quran.net/api/v3/radios
 
   static Future<RadioStation?> getRadio() async {
     RadioStation? radioStation;
@@ -17,5 +16,6 @@ class ApiManger {
       radioStation = RadioStation.fromJson(jsonDecode(response.body));
       return radioStation;
     }
+    return null;
   }
 }
